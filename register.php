@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +48,7 @@
         </table>
         <br>
         <div style="text-align: center;">
-             <a href="index.html">กลับหน้าหลัก</a>
+             <a href="index.php">กลับหน้าหลัก</a>
         </div>
     </form>
 </body>

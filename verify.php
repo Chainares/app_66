@@ -1,3 +1,9 @@
+<?php
+session_start();
+session_destroy();
+header("location:index.php");
+die();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +19,17 @@
        $login=$_POST ["login"];
         $pwd=$_POST['pwd'];
         if($login=="admin"&& $pwd =="ad1234"){
+            $_SESSION['username']='admin';
+            $_SESSION['role']='a';
+            $_SESSION['id']=session_id();
+
             echo"ยินดีต้อนรับคุณ ADMIN<br>";
             echo"<a href=index.php >กลับไปหน้าหลัก</a>";
         }elseif($login=="member"&& $pwd =="mem1234"){
+            $_SESSION['username']='member';
+            $_SESSION['role']='m';
+            $_SESSION['id']=session_id();
+
             echo"ยินดีต้อนรับคุณ MEMBER<br>";
            
             echo"<a href=index.php >กลับไปหน้าหลัก</a>";
