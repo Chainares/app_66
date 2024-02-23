@@ -1,4 +1,6 @@
-
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +13,29 @@
         <h1 style="text-align: center;">Webboard</h1>
     </header>
     <hr>
+<div class="container-lg">
+    <h1 style="text-align: center;" class="mt-3">___oKaKo__88_</h1>
+    
+    <?php include"nav.php";?>
+  <div class="row mt-4">
+    <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>
+    <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+        <div class="card">
+            <div class="card-header">เข้าสู่ระบบ</div>
+            <div class="card-body">
+                <form action="verify.php" method="post">
+                    <div class="form-group">
+                        <label for="user" class="form-label"> login</label>
+                        <input type="text" id="user" class="form-control" name="login" required>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>
+  </div>
+</div>
+
     <form action="verify.php" method="post">
         <table style="border: 2px solid black; width: 40%;" align="center">
             <tr>
