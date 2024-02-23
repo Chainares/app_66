@@ -32,40 +32,22 @@ session_start();
         </ul>
    </span>
             </div>
-  </div>
-      <?php   if (isset($_SESSION['id'])){?>
-       <div><a href="newpost.php" class="btn btn-success btn-sm">
+            <?php   if (isset($_SESSION['id'])){?>
+       <div><a href="newpost.php" class="btn btn-success btn-sm ">
         <i class="bi bi-plus"></i> สร้างกระทุ้ใหม่ </a> </div>
       <?php }?>
-    <form>
-    หมวดหมู่: 
-    <select name="category">
-         <option value="all">---ทั้ง---</option>
-         <option value="general">General</option>>เรื่องทั่วไป</option>
-         <option value="study">Study</option>
-    </select>
-     <?php
-      if (!isset($_SESSION['id'])){
-        echo "<a href= login.php  style='float:right';>เข้าสู่ระบบ</a>";
+  </div>
 
-      }else{
-        echo"<div style='float:right;'>
-              ผู้ใช้งานระบบ:$_SESSION[username]&nbsp;&nbsp;
-              <a href=logout.php> ออกจากระบบ</a>
-            </div> ";
-        echo"<br><a href=newpost.php>สร้างกระทุ้ใหม่</a>";
-            }
-     ?>
-    </form> 
-      <table class="tabele tabele-striped mt-4">
+
+      <table class="table table-striped mt-4">
         <?php
             for($i=1;$i<=10;$i++){
-             echo "<tr><td>  <li> <a href='post.php?id=$i style=text-decoration:none'> กระทู้ที่ $i</a>";
+             echo "<tr><td class='d-flex justify-content-between'> <a href=post.php?id=$i style=text-decoration:none> กระทู้ที่ $i</a>";
              if(isset($_SESSION['id']) &&$_SESSION['role']=='a'){ 
               echo "&nbsp;&nbsp;
-              <a href=delete.php?id=$i class='btn btn-danger btn-sm'>ลบ</a>";
+              <a href=delete.php?id=$i class='btn btn-danger btn-sm'><i class='bi bi-trash'></i></a>";
                }
-              echo"</td></tr>  </li>";
+              echo"</td></tr>";
               }
            ?>  
 
@@ -73,7 +55,7 @@ session_start();
   
   </div>
 
-  <div class="container-lg"></div>
+
 </body>
 
 

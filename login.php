@@ -22,7 +22,7 @@ session_start();
     <div class="col-lg-4 col-md-6 col-sm-8 col-10">
         <?php 
             if(isset($_SESSION['error'])){
-                echo"<div class='alert alert-danger'>ชื่อบัญชีหรือรหัสไม่ถูกต้อง</div> "
+                echo "<div class='alert alert-danger'>ชื่อบัญชีหรือรหัสไม่ถูกต้อง</div>";
                 unset($_SESSION['error']);
             }
         ?>
