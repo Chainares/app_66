@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <title>register</title>
+  <title>register</title>
 </head>
 <body>
     <header>
@@ -26,6 +26,19 @@
 <div class="row mt-4">
      <div class="col-lg-3 col-md-2 col-sm-1"></div>
      <div class="col-lg-6 col-md-8 col-sm-10">
+	 <?php 
+    if(isset($_SESSION['add_login'])){
+        if($_SESSION['add_login']=='error'){
+            echo" <div class='alert alert-danger'>
+            ชื่อบัญชีซ้ำหรือมีปันหา</div>";
+        }else if($_SESSION['add_login']=='success'){
+			echo "<div class='alert alert-success'>
+			    เพิ่มบัญชีเรียบร้อยแล้ว</div>";
+			
+		}
+		unset($_SESSION['add_login']);
+       }
+    ?>
         <div class="card border-primary">
             <div class="card-header bg-primary txt-white">เข้าสู้ระบบ</div>
             <div class="card-body">
@@ -86,48 +99,7 @@
      </div>
      <div class="col-lg-3 col-md-2 col-sm-1"></div>
 </div>
-<br>
-<Br>
-<Br>
-    <form action="">
-        <table style="border: 2px solid black; width: 40%;" align="center">
-            <tr>
-                <td colspan="2" style="background-color: #6CD2EF;">กรอกข้อมูล</td>
-            </tr>
-            <tr>
-                <td> ชื่อบัญชี: </td>
-                <td><input type="text" name="username" size="50"></td>
-            </tr
-            <tr>
-                <td> รหัสผ่าน: </td>
-                <td><input type="password" name="pwd" size="50"></td>
-            </tr>
-            <tr>
-                <td> ชื่อ-นามสกุล: </td>
-                <td><input type="text" name="full_name" size="50"></td>
-            </tr>
-            <tr>
-                <td> เพศ: </td>
-                <td>
-                    <input type="radio" name="gender" value="m"> ชาย <br>
-                    <input type="radio" name="gender" value="w"> หญิง <br>
-                    <input type="radio" name="gender" value="o"> อื่นๆ
-                </td>
-            </tr>
-            <tr>
-                <td>อีเมล:</td>
-                <td><input type="email" name="email" size="50"></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="right">
-                    <input type="submit" value="สมัครสมาชิก">
-                </td>
-            </tr>
-        </table>
-        <br>
-        <div style="text-align: center;">
-             <a href="index.php">กลับหน้าหลัก</a>
-        </div>
-    </form>
+
+    
 </body>
 </html>

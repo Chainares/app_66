@@ -25,11 +25,17 @@ session_start();
       <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       ---ทั้งหมด---
           </button>
-          <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
-          <li><a class="dropdown-item" href="#">เรื่องเรียน</a></li>
-         <li><a class="dropdown-item" href="#">เรื่องทั่วไป</a></li>
-        </ul>
+          <ul class="dropdown-menu" aria-labelledby="Button2">
+                <li><a href="#" class="dropdown-item">ทั้งหมด</a></li>
+                    <?php
+                        $conn=new PDO("mysql:host=localhost;dbname=app66;charset=utf8","root","");
+                        $sql="SELECT * FROM category";
+                        foreach($conn->query($sql) as $row){
+                            echo "<li><a class-dropdown-item href=# style= text-decoration:none >$row[name]</a></li>";
+                        }
+                        $conn=null;
+                    ?>
+            </ul>
    </span>
             </div>
             <?php   if (isset($_SESSION['id'])){?>
@@ -50,13 +56,7 @@ session_start();
               echo"</td></tr>";
               }
            ?>  
-
     </table>
-  
   </div>
-
-
 </body>
-
-
 </html>
