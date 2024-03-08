@@ -9,7 +9,11 @@
     <title>verify_post</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Webboard-onii</h1>
+<div class="container-lg">
+<h1 style="text-align: center;" class="mt-3">Webboard-post</h1>
+<?php include "nave.php"?>
+</div>
+    <h1 style="text-align: center;">Webboard-post</h1>
     <hr>
     <div style="text-align: center;">
         <?php 
