@@ -7,7 +7,7 @@ die();
 $login=$_POST['login'];
 $pwd=$_POST['pwd'];
 $conn =new PDO("mysql:host=localhost;dbname=app66;charset=utf8","root","");
-$sql="SELECT * from user where login='$u' and password=sha1('$p')";
+$sql="SELECT * from user where login='$login' and password=sha1('$pwd')";
 $result = $conn->query($sql);
 if($result->rowCount()==1){
     $data = $result->fetch(PDO::FETCH_ASSOC);

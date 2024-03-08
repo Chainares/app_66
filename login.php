@@ -1,5 +1,9 @@
 <?php
-session_start(); 
+    session_start();
+    if(isset($_SESSION['id'])){
+        header("location: index.php");
+        die();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +18,7 @@ session_start();
 </head>
 <body>
 <div class="container-lg">
-    <h1 style="text-align: center;" class="mt-3">_oKaKo__</h1>
+    <h1 style="text-align: center;" class="mt-3">Webboard_Login</h1>
     
     <?php include"nav.php";?>
   <div class="row mt-4">
