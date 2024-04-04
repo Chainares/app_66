@@ -22,6 +22,17 @@
               <?php echo $_SESSION['username']?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="Button1">
+                <?php 
+                if($_SESSION['role'] == 'a'){
+                ?>
+              <li><a href="category.php" class="dropdown-item">
+                      <i class="bi bi-bookmarks"></i> จัดการหมวดหมู่
+                  </a></li>
+                  <li><a href="" class="dropdown-item">
+                      <i class="bi bi-person-check"></i> จัดการผู้ใช้งาน
+                  </a></li>
+
+                  <?php }  ?>
                   <li><a href="logout.php" class="dropdown-item">
                       <i class="bi bi-power"></i> ออกจากระบบ
                   </a></li>
